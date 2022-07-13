@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Bill Payment</title>
+    <script src="public.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        *{
+            font-family: 'Inter', sans-serif;
+        }
+        input{
+            border-radius: 5px;
+        }
+        body{
+            color: white;
+            background-color: rgb(24, 1, 41);
+        }
+        button{
+            border-radius: 5px;
+        }
+        footer{
+            color: aliceblue;
+            position: absolute;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+        }
+        footer button{
+            font-size: 20px;    
+        }
+        #form-div select, input, button{
+            background-color: white;
+            font-size: 20px;
+        }
+        #form-div > p{
+            font-size: 28px;
+        }
+
+        #payBtn{
+            padding: 10px;
+            background-color: transparent;
+            border-color: white;
+            color: white;
+            visibility: hidden;
+        }
+        #payBtn:hover{
+            background-color: white;
+            color: black;
+            border-color: white;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+        <br>
+        <div>
+            <h1>Utility Bill Payment Interface</h1> <hr style="width: 30%;"> <br> <br>
+        </div>
+        <div id="form-div">
+            <h2>Pay Electricity Bill - Karnataka Board</h2> <br>
+            <br> <br>
+            <label style="position:relative;left: -89px;bottom: 10px;font-size: 18px;" for="ac_id_label">Link KB Account</label><br>
+            <input style="width:14.5%;" type="text" name="link-acnt" id="ac_id" placeholder="Enter KB Account ID"> 
+            <button style="width:4.8%;" id="kbBtn" onclick="checkAcId()">&gt;</button><br>
+            <p style="font-size: 15px;color: gray;" id="kbInfo" >&#9432; KB Account is your account registered with Karnataka Electricity Board</p>
+            <p id="bill"></p> <br>
+
+            <label style="position:relative;left: -79px;bottom: 10px;font-size: 18px;" for="upi_id_label">Enter UPI ID to pay</label><br>
+            <input style="position:relative;width:19.8%;left: 40px;" type="text" name="upi_text" id="upi_text" placeholder="UPI ID">
+            <button style="position:relative;width:4.8%;left: 40px;" onclick="check_UPI_Id()" id="upiBtn">&gt;</button>
+
+            <br> <br> <br><br><br>
+            <button id="payBtn" onclick="paid()">Proceed to payment</button>
+        </div>
+        <footer>
+            <button onclick="goHome()">&larr; Go back Home</button>
+        </footer>
+    </center>
+</body>
+</html>
